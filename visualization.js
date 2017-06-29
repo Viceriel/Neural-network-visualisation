@@ -1,8 +1,3 @@
-var dataset = createDataset();
-var neural = makeNetwork(3, [1, 5, 1], dataset);
-var buff = run(dataset, neural, 3, [1, 5, 1]);
-getFormulars();
-
 var WIDTH = 300;
 var HEIGHT = 300;
 var PADDING = 12;
@@ -12,8 +7,12 @@ var line = d3.svg.line()
 				 .interpolate("linear");
 
 
-function DrawGraphs(canvases)
+function DrawGraphs(canvases, buff, dataset)
 {
+	canvases[0]
+		.selectAll("path")
+		.remove();
+
 	canvases[0].append("path")
 				.attr({d: line(buff[0]), 
 				   "stroke": "green", 
@@ -28,6 +27,10 @@ function DrawGraphs(canvases)
 
 	for (i = 1; i < 7; i++)
 	{
+		canvases[i]
+			.selectAll("path")
+			.remove();
+
 		canvases[i].append("path")
 					.attr({d: line(buff[i]), 
 				   		"stroke": "blue", 

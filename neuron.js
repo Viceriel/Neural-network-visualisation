@@ -10,7 +10,7 @@ function Neuron(previous)			//dynamic prototype of network, argument- previous n
 	{	
 		this.weights= new Array(this.previous_layer.length);	//count of neuron synapses are previous layer + 1(one represent bias)
 		for (var i = 0; i < this.previous_layer.length; i++)
-			this.weights[i] = 1;
+			this.weights[i] = 0;
 
 		this.bias = 0;
 	}	

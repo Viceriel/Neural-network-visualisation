@@ -106,8 +106,8 @@ function getFormulars()
 		weights_biases[0][i][1].className = classes[counter-1];
 		weights_biases[0][i][0].value = 0;
 		weights_biases[0][i][1].value = 0;
-		weights_biases[0][i][0].addEventListener("change", function(){alert("ahoj");}, false);
-		weights_biases[0][i][1].addEventListener("change", function(){alert("ahoj");}, false);
+		weights_biases[0][i][0].addEventListener("change", ChangeHandler, false);
+		weights_biases[0][i][1].addEventListener("change", ChangeHandler, false);
 	}
 
 	return weights_biases;
@@ -126,4 +126,16 @@ function GetCanvases()
 	canvases[6] = d3.select(".canvas7");
 
 	return canvases;
+}
+
+function ChangeHandler(e)
+{
+	var root = e.target.parentNode;
+	var len = root.children.length;
+	var synapses = new Array(len); 
+
+	for (var i = 0; i < len; i++)
+		synapses[i] = parseFloat(root.children[i].value);
+
+	MainFlow(synapses);
 }
