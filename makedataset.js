@@ -42,6 +42,13 @@ function makeNetwork(size, topology)
 	return neural;
 }
 
+//running through neural network
+//arguments:
+// 				dataset- data, 
+//				neural- array of neurons, 
+//				size- count of neural layers
+//				topology- structure of neural layers
+//return value- buffer with neuron activation values
 function run(dataset, neural, size, topology)
 {
 	var len = dataset.length;
