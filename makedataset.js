@@ -104,9 +104,26 @@ function getFormulars()
 
 		weights_biases[0][i][0].className = classes[counter-2];
 		weights_biases[0][i][1].className = classes[counter-1];
+		weights_biases[0][i][0].value = 0;
+		weights_biases[0][i][1].value = 0;
 		weights_biases[0][i][0].addEventListener("change", function(){alert("ahoj");}, false);
 		weights_biases[0][i][1].addEventListener("change", function(){alert("ahoj");}, false);
 	}
 
 	return weights_biases;
+}
+
+function GetCanvases()
+{
+	var canvases = new Array(7);
+
+	canvases[0] = d3.select(".canvas1");
+	canvases[1] = d3.select(".canvas2");
+	canvases[2] = d3.select(".canvas3");
+	canvases[3] = d3.select(".canvas4");
+	canvases[4] = d3.select(".canvas5");
+	canvases[5] = d3.select(".canvas6");
+	canvases[6] = d3.select(".canvas7");
+
+	return canvases;
 }

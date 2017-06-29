@@ -1,0 +1,1 @@
+DrawGraphs(GetCanvases());
