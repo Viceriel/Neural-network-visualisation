@@ -1,10 +1,14 @@
 var WIDTH = 300;
 var HEIGHT = 300;
 var PADDING = 12;
-var line = d3.svg.line()
+var line = d3.line()
 				 .x(function(d){return d[0]*50;})
-				 .y(function(d){return HEIGHT-d[1]*100 - PADDING;})
-				 .interpolate("linear");
+				 .y(function(d){return HEIGHT-d[1]*100 - PADDING;});
+				 //.interpolate("linear");
+
+var uscale = d3.scaleLinear()
+		     .domain([0, 300])
+		     .range([0, 300]);
 
 
 function DrawGraphs(canvases, buff, dataset)
@@ -14,16 +18,14 @@ function DrawGraphs(canvases, buff, dataset)
 		.remove();
 
 	canvases[0].append("path")
-				.attr({d: line(buff[0]), 
-				   "stroke": "green", 
-				   "stroke-width": 1,
-				   "fill": "none"});
+     		.data([buff[0]])
+      		.attr("class", "line2")
+      		.attr("d", line);
 
 	canvases[0].append("path")
-				.attr({d: line(dataset), 
-				   "stroke": "blue", 
-				   "stroke-width": 1,
-				   "fill": "none"});
+      		.data([dataset])
+      		.attr("class", "line")
+      		.attr("d", line);
 
 	for (i = 1; i < 7; i++)
 	{
@@ -31,10 +33,53 @@ function DrawGraphs(canvases, buff, dataset)
 			.selectAll("path")
 			.remove();
 
-		canvases[i].append("path")
-					.attr({d: line(buff[i]), 
-				   		"stroke": "blue", 
-				   		"stroke-width": 1,
-				   		"fill": "none"});
+		canvases[i].append("path")			  
+      		.data([buff[i]])
+      		.attr("class", "line")
+      		.attr("d", line);
 	}
+}
+
+function make_x_gridlines() {		
+    return d3.axisBottom(uscale)
+        .ticks(5)
+}
+
+function make_y_gridlines() {		
+    return d3.axisLeft(uscale)
+        .ticks(3)
+}
+
+function GetCanvases()
+{
+	var len = 7;
+	var canvases = new Array(len);
+
+	canvases[0] = d3.select(".canvas1");
+	canvases[1] = d3.select(".canvas2");
+	canvases[2] = d3.select(".canvas3");
+	canvases[3] = d3.select(".canvas4");
+	canvases[4] = d3.select(".canvas5");
+	canvases[5] = d3.select(".canvas6");
+	canvases[6] = d3.select(".canvas7");
+
+	for (var i = 0; i < len; i++)
+	{
+		canvases[i]
+			.append("g")
+			  .attr("class", "grid")
+			  .call(make_y_gridlines()
+					.tickSize(-300)
+					.tickFormat(""));
+			
+			canvases[i]
+			  .append("g")
+			  .attr("class", "grid")
+			  .attr("transform", "translate(0," + 300 + ")")
+			  .call(make_x_gridlines()
+					.tickSize(-300)
+					.tickFormat(""));
+	}
+
+	return canvases;
 }

@@ -3,8 +3,8 @@ function createDataset()
 	var dataset = new Array();
 	var x = 0;
 	var counter = 0;
-	var scale_y = d3.scale.linear();
-	var scale_x = d3.scale.linear();
+	var scale_y = d3.scaleLinear();
+	var scale_x = d3.scaleLinear();
 	scale_y.domain([-1, 1])
 	 	.range([0, 1]);
 
@@ -111,21 +111,6 @@ function getFormulars()
 	}
 
 	return weights_biases;
-}
-
-function GetCanvases()
-{
-	var canvases = new Array(7);
-
-	canvases[0] = d3.select(".canvas1");
-	canvases[1] = d3.select(".canvas2");
-	canvases[2] = d3.select(".canvas3");
-	canvases[3] = d3.select(".canvas4");
-	canvases[4] = d3.select(".canvas5");
-	canvases[5] = d3.select(".canvas6");
-	canvases[6] = d3.select(".canvas7");
-
-	return canvases;
 }
 
 function ChangeHandler(e)
