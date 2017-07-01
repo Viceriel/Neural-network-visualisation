@@ -108,9 +108,26 @@ function getFormulars()
 		weights_biases[0][i][1].value = 0;
 		weights_biases[0][i][0].addEventListener("change", ChangeHandler, false);
 		weights_biases[0][i][1].addEventListener("change", ChangeHandler, false);
-	}
 
-	return weights_biases;
+		var block = document.createElement("p");
+		var tex = document.createTextNode(classes[counter-2]+":");
+		block.appendChild(tex);
+		document.body.appendChild(block);
+		block.style.position = "absolute";
+		block.style.left = weights_biases[0][i][0].offsetLeft - 30 + "px";
+		block.style.top = weights_biases[0][i][0].offsetTop;
+		block.style.margin = "0px";
+
+		var block1 = document.createElement("p");
+		var tex1 = document.createTextNode(classes[counter-1]+":");
+		block1.appendChild(tex1);
+		document.body.appendChild(block1);
+		block1.style.position = "absolute";
+		block1.style.left = weights_biases[0][i][1].offsetLeft - 30 + "px";
+		block1.style.top = weights_biases[0][i][1].offsetTop;
+		block1.style.margin = "0px";
+
+	}
 }
 
 function ChangeHandler(e)

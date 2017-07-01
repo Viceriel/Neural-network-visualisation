@@ -1,7 +1,7 @@
 var data = createDataset();
 var neural = makeNetwork(3, [1, 5, 1], data);
 var buffer = run(data, neural, 3, [1, 5, 1]);
-var weights_biases = getFormulars();
+getFormulars();
 var canvases = GetCanvases();
 
 DrawGraphs(canvases, buffer, data);

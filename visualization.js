@@ -63,6 +63,8 @@ function GetCanvases()
 	canvases[5] = d3.select(".canvas6");
 	canvases[6] = d3.select(".canvas7");
 
+	var labels = ["Output of o:", "Output of h1:", "Output of h2:", "Output of h3:", "Output of h4:", "Output of h5:", "Weighted output of hidden layer"];
+
 	for (var i = 0; i < len; i++)
 	{
 		canvases[i]
@@ -79,7 +81,30 @@ function GetCanvases()
 			  .call(make_x_gridlines()
 					.tickSize(-300)
 					.tickFormat(""));
+
+		if (i != 6)
+		{
+			canvases[i]
+				.append("text")
+				.attr("x", 0)
+        		.attr("y", 20)
+				.attr("class", "description")
+				.text(labels[i]);
+		}
 	}
 
+	canvases[6]
+			.append("text")
+			.attr("x", 0)
+        	.attr("y", 20)
+			.attr("class", "description")
+			.text(labels[6]);
+
+	canvases[6]
+			.append("text")
+			.attr("x", 0)
+        	.attr("y", 40)
+			.attr("class", "description")
+			.text("(input of o):");
 	return canvases;
 }
