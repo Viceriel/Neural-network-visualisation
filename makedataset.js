@@ -141,3 +141,14 @@ function ChangeHandler(e)
 
 	MainFlow(synapses);
 }
+
+function ComputeError(arr1, arr2)
+{
+	var len = arr1.length;
+	var res = 0;
+
+	for (var i = 0; i < len; i++)
+		res += (arr1[i]-arr2[i])*(arr1[i]-arr2[i]);
+
+	return res;
+}

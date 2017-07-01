@@ -19,4 +19,18 @@ function MainFlow(synapses)
 
 	var buff = run(data, neural, 3, [1, 5, 1]);
 	DrawGraphs(canvases, buff, data);
+
+	var dataset = new Array(2);
+	len = data.length;
+	dataset[0] = new Array(len);
+	dataset[1] = new Array(len);
+	for (i= 0; i < len; i++)
+	{
+		dataset[0][i] = data[i][1];
+		dataset[1][i] = buff[0][i][1];
+	}
+
+	var square_error = ComputeError(dataset[0], dataset[1]);
+	var textik = document.getElementById("err");
+	textik.innerHTML = textik.innerHTML + square_error;
 }

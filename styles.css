@@ -176,3 +176,13 @@ img
 	fill: black;
 	overflow-wrap: break-word;
 }
+
+#err
+{
+	font-size: 20px;
+	font-family: sans-serif;
+	color: #ff5c33;
+	position: absolute;
+	top: 200px;
+	left: 970px;
+}
