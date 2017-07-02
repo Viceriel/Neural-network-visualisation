@@ -32,5 +32,6 @@ function MainFlow(synapses)
 
 	var square_error = ComputeError(dataset[0], dataset[1]);
 	var textik = document.getElementById("err");
+	textik.innerHTML = "Square error: "
 	textik.innerHTML = textik.innerHTML + square_error;
 }
