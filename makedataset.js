@@ -156,7 +156,15 @@ function ChangeHandler(e)
 	var synapses = new Array(len); 
 
 	for (var i = 0; i < len; i++)
+	{
 		synapses[i] = parseFloat(root.children[i].value);
+
+		if (isNaN(synapses[i]))
+		{
+			alert("Dear user, I like you and this all was make for you. Your pleasure, education. But you type into the textbox invalid value. I think actions like this is dishonest and unfair from you. If you will be in future in similar situation, please sacrifice some second from your precious time and ask yourself simple question, What should I type into the textbox? If you do that, you make me happy and I will be so proud of you. Thank you!");
+			return;
+		}
+	}
 
 	MainFlow(synapses);
 }
