@@ -89,14 +89,15 @@ function run(dataset, neural, size, topology)
 
 function getFormulars()
 {
-	var weights_biases = new Array(2);
+	var weights_biases = new Array(1);
 
 	weights_biases[0] = new Array(5);
 	root = document.getElementById("synapse");
 	counter = 0;
-	var classes = ["w1", "b1", "w2", "b2", "w3", "b3", "w4", "b4", "w5", "b5"];
+	var classes = ["w1", "b1", "w2", "b2", "w3", "b3", "w4", "b4", "w5", "b5", "w6", "w7", "w8", "w9", "w10", "b6"];
+	var len = classes.length;
 
-	for (i = 0; i < 5; i++)
+	for (var i = 0; i < 5; i++)
 	{
 		weights_biases[0][i] = new Array(2);
 		weights_biases[0][i][0] = root.children[counter++];
@@ -128,6 +129,24 @@ function getFormulars()
 		block1.style.margin = "0px";
 
 	}
+
+	weights_biases[1] = new Array(6);
+	for (i = 0; i < 6; i++)
+	{
+		weights_biases[1][i] = root.children[counter++];
+		weights_biases[1][i].className = classes[counter-1];
+		weights_biases[1][i].value = 0;
+		weights_biases[1][i].addEventListener("change", ChangeHandler, false);
+
+		block= document.createElement("p");
+		tex = document.createTextNode(classes[counter-1]+":");
+		block.appendChild(tex);
+		document.body.appendChild(block);
+		block.style.position = "absolute";
+		block.style.left = weights_biases[1][i].offsetLeft - 35 + "px";
+		block.style.top = weights_biases[1][i].offsetTop;
+		block.style.margin = "0px";
+	}
 }
 
 function ChangeHandler(e)
@@ -148,7 +167,7 @@ function ComputeError(arr1, arr2)
 	var res = 0;
 
 	for (var i = 0; i < len; i++)
-		res += (arr1[i]-arr2[i])*(arr1[i]-arr2[i]);
+		res += (arr1[i][1]-arr2[i][1])*(arr1[i][1]-arr2[i][1]);
 
 	return res;
 }
