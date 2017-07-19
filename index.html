@@ -8,36 +8,41 @@
   <script type="text/javascript" src="d3.v4.min.js" charset="utf"></script>
   </head>
   <body>
-  	<svg class="canvas1"></svg>
-  	<svg class="canvas2"></svg>
-  	<svg class="canvas3"></svg>
-  	<svg class="canvas4"></svg>
-    <svg class="canvas5"></svg>
-    <svg class="canvas6"></svg>
-    <svg class="canvas7"></svg>
-    <div id="synapse">
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-  </div>
-  <img src="net.png">
-  <p id="err">Square error: </p>
-  <script type="text/javascript" src="neuron.js"></script>
-  <script type="text/javascript" src="makedataset.js"></script>
-  <script type="text/javascript" src="visualization.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+    <div id = "central">
+  	 <svg class="canvas1"></svg>
+  	 <svg class="canvas2"></svg>
+  	 <svg class="canvas3"></svg>
+  	 <svg class="canvas4"></svg>
+      <svg class="canvas5"></svg>
+      <svg class="canvas6"></svg>
+      <svg class="canvas7"></svg>
+      <div id="synapse">
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </div>
+      <img src="net.png" id="gui">
+      <p id="err">Square error: </p>
+    </div>
+    <div id = "guide">
+     <img src="">
+    </div>
+    <script type="text/javascript" src="neuron.js"></script>
+    <script type="text/javascript" src="makedataset.js"></script>
+    <script type="text/javascript" src="visualization.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>  
 </html>
