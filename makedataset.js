@@ -44,8 +44,8 @@ function makeNetwork(size, topology)
 
 //running through neural network
 //arguments:
-// 				dataset- data, 
-//				neural- array of neurons, 
+// 				dataset- data,
+//				neural- array of neurons,
 //				size- count of neural layers
 //				topology- structure of neural layers
 //return value- buffer with neuron activation values
@@ -54,12 +54,12 @@ function run(dataset, neural, size, topology)
 	var len = dataset.length;
 	var buff = new Array(7);
 
-	for (i = 0; i < 7; i++) 
+	for (i = 0; i < 7; i++)
 		buff[i] = new Array(len);
 
 	var index = 0;
 	for (i = 0; i < len; i++)
-	{	 
+	{
 		neural[0][0].output = dataset[i][0];
 
 		for (var k = 1; k < size; k++)
@@ -147,26 +147,6 @@ function getFormulars()
 		block.style.top = weights_biases[1][i].offsetTop;
 		block.style.margin = "0px";
 	}
-}
-
-function ChangeHandler(e)
-{
-	var root = e.target.parentNode;
-	var len = root.children.length;
-	var synapses = new Array(len); 
-
-	for (var i = 0; i < len; i++)
-	{
-		synapses[i] = parseFloat(root.children[i].value);
-
-		if (isNaN(synapses[i]))
-		{
-			alert("Dear user, I like you and this all was make for you. Your pleasure, education. But you type into the textbox invalid value. I think actions like this is dishonest and unfair from you. If you will be in future in similar situation, please sacrifice some second from your precious time and ask yourself simple question, What should I type into the textbox? If you do that, you make me happy and I will be so proud of you. Thank you!");
-			return;
-		}
-	}
-
-	MainFlow(synapses);
 }
 
 function ComputeError(arr1, arr2)

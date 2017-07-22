@@ -1,8 +1,8 @@
 .canvas1
 {
-	position: absolute; 
-	top:0px; 
-	left:620px; 
+	position: absolute;
+	top:0px;
+	left:620px;
 	width:300px;
 	height:300px;
 	border: 1px solid black;
@@ -10,9 +10,9 @@
 
 .canvas2
 {
-	position: absolute; 
-	top:0px; 
-	left:0px; 
+	position: absolute;
+	top:0px;
+	left:0px;
 	width:300px;
 	height:300px;
 	border: 1px solid black;
@@ -20,9 +20,9 @@
 
 .canvas3
 {
-	position: absolute; 
-	top:300px; 
-	left:0px; 
+	position: absolute;
+	top:300px;
+	left:0px;
 	width:300px;
 	height:300px;
 	border: 1px solid black;
@@ -30,9 +30,9 @@
 
 .canvas4
 {
-	position: absolute; 
-	top:600px; 
-	left:0px; 
+	position: absolute;
+	top:600px;
+	left:0px;
 	width:300px;
 	height:300px;
 	border: 1px solid black;
@@ -40,9 +40,9 @@
 
 .canvas5
 {
-	position: absolute; 
-	top:0px; 
-	left:300px; 
+	position: absolute;
+	top:0px;
+	left:300px;
 	width:300px;
 	height:300px;
 	border: 1px solid black;
@@ -50,9 +50,9 @@
 
 .canvas6
 {
-	position: absolute; 
-	top:300px; 
-	left:300px; 
+	position: absolute;
+	top:300px;
+	left:300px;
 	width:300px;
 	height:300px;
 	border: 1px solid black;
@@ -60,9 +60,9 @@
 
 .canvas7
 {
-	position: absolute; 
-	top:600px; 
-	left:300px; 
+	position: absolute;
+	top:600px;
+	left:300px;
 	width:300px;
 	height:300px;
 	border: 1px solid black;
@@ -196,14 +196,14 @@
 	width: 100px;
 }
 
-.line 
+.line
 {
   fill: none;
   stroke: steelblue;
   stroke-width: 2px;
 }
 
-.line2 
+.line2
 {
   fill: none;
   stroke: green;
@@ -242,12 +242,11 @@
 {
 	border: 1px solid black;
 	border-radius: 15px;
-	width: 500px;
-	height: 500px;
+	width: 750px;
+	height: 750px;
 	position: absolute;
 	left: 500px;
 	top: 200px;
-	background-color: white;
 	opacity: 1;
 }
 
@@ -261,4 +260,18 @@
 	position: absolute;
 	left: 650px;
 	top : 350px;
+}
+
+#close
+{
+	position: absolute;
+	left: 720px;
+	top: 0px;
+}
+
+#left
+{
+	position: absolute;
+	left: 0px;
+	top: 350px;
 }

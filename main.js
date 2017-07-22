@@ -5,6 +5,7 @@ getFormulars();
 var canvases = GetCanvases();
 
 DrawGraphs(canvases, buffer, data);
+initializeHandlers();
 
 function MainFlow(synapses)
 {
