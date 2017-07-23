@@ -245,9 +245,10 @@
 	width: 750px;
 	height: 750px;
 	position: absolute;
-	left: 500px;
-	top: 200px;
+	left: 200px;
+	top: 100px;
 	opacity: 1;
+	background-color: white;
 }
 
 #central
@@ -273,5 +274,12 @@
 {
 	position: absolute;
 	left: 0px;
+	top: 350px;
+}
+
+#right
+{
+	position: absolute;
+	left: 600px;
 	top: 350px;
 }

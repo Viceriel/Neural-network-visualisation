@@ -1,14 +1,18 @@
+var index = 0;
+const SLIDES = ["title.png", "task.png", "approximation.png", "parameters.png", "description.png", "h11.png", "h12.png", "question.png", "explanation.png", "solution.png", "wish.png"];
+const LEN = SLIDES.length - 1;
+
 function initializeHandlers()
 {
     var close = document.getElementById("close");
     var left = document.getElementById("left");
     var right = document.getElementById("right");
-    var source_list = ["title", "explanation1"];
-    var index = 0;
+    var main = document.getElementById("main");
 
     close.addEventListener("click", CloseHandler, false);
-    //left.addEventListener("click", LeftHandler, false);
-    //right.addEventListener("click", RightHandler, false);
+    right.addEventListener("click", RightHandler, false);
+    left.style.opacity = 0;
+
 }
 
 function ChangeHandler(e)
@@ -36,4 +40,45 @@ function CloseHandler(e)
   var plane = document.getElementById("central");
   plane.style.opacity = 1;
   e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+}
+
+function RightHandler()
+{
+
+  index++;
+  if (index > 0)
+  {
+    var left = document.getElementById("left");
+    left.addEventListener("click", LeftHandler, false);
+    left.style.opacity = 1;
+  }
+
+  document.getElementById("main").src = SLIDES[index];
+
+  if (LEN == index)
+  {
+      var right = document.getElementById("right");
+      right.removeEventListener("click", RightHandler);
+      right.style.opacity = 0;
+  }
+}
+
+function LeftHandler()
+{
+  index--;
+  if (LEN - 1 == index)
+  {
+    var right = document.getElementById("right");
+    right.addEventListener("click", RightHandler, false);
+    right.style.opacity = 1;
+  }
+
+  document.getElementById("main").src = SLIDES[index];
+
+  if (index == 0)
+  {
+    var left = document.getElementById("left");
+    left.removeEventListener("click", LeftHandler);
+    left.style.opacity = 0;
+  }
 }
