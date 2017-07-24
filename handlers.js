@@ -2,6 +2,8 @@ var index = 0;
 const SLIDES = ["title.png", "task.png", "approximation.png", "parameters.png", "description.png", "h11.png", "h12.png", "question.png", "explanation.png", "solution.png", "wish.png"];
 const LEN = SLIDES.length - 1;
 
+this.addEventListener("load", CounterAttack, false);
+
 function initializeHandlers()
 {
     var close = document.getElementById("close");
@@ -80,5 +82,18 @@ function LeftHandler()
     var left = document.getElementById("left");
     left.removeEventListener("click", LeftHandler);
     left.style.opacity = 0;
+  }
+}
+
+function CounterAttack()
+{
+  var body = document.childNodes[1].childNodes[2];
+  var len = body.children.length;
+
+  if (len >= 24)
+  {
+    body.children[23].style.position = "absolute";
+    body.children[23].style.top = "900px";
+    body.children[23].style.left = "900px";
   }
 }
