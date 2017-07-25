@@ -171,7 +171,7 @@ function getFormulars()
  *
  *@param {Array}
  *@param {Array}
- *@return sum of square differencies
+ *@return {Number} sum of square differencies
  */
 function ComputeError(arr1, arr2)
 {

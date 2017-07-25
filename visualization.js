@@ -63,7 +63,7 @@ function make_y_gridlines() {
 
 /**
  * Getting canvases from document, adding labels to canvases
- *@return array of canvases
+ *@return {Array} array of canvases
  */
 function GetCanvases()
 {
