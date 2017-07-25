@@ -7,6 +7,11 @@ var canvases = GetCanvases();
 DrawGraphs(canvases, buffer, data);
 initializeHandlers();
 
+/**
+ * Application of user typed synapse to neural network, running with new synapse, execution of drawing and display of square error
+ *
+ *@param {Array} synapses array of user typed values of weights
+ */
 function MainFlow(synapses)
 {
 	var len = synapses.length;

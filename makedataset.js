@@ -1,3 +1,8 @@
+/**
+ * Creating normalize sine data
+ *
+ * @return {Array} sine data
+ */
 function createDataset()
 {
 	var dataset = new Array();
@@ -22,6 +27,13 @@ function createDataset()
 	return dataset;
 }
 
+/**
+ * Creating neural network
+ *
+ *@param {Number} size neural network layers
+ *@param {Array} topology count  of neurons in layers
+ *@return {Neurons} specified network
+ */
 function makeNetwork(size, topology)
 {
 	neural = new Array(size);
@@ -42,13 +54,15 @@ function makeNetwork(size, topology)
 	return neural;
 }
 
-//running through neural network
-//arguments:
-// 				dataset- data,
-//				neural- array of neurons,
-//				size- count of neural layers
-//				topology- structure of neural layers
-//return value- buffer with neuron activation values
+/**
+ * Feedforward propagation through neural network
+ *
+ *@param {Array}  dataset input data for neural network
+ *@param {Neurons} neural neural network
+ *@param {Number} size neural network layers count
+ *@param {Array} topology count  of neurons in layers
+ *@return {Array} neuron responses to input stimuls
+ */
 function run(dataset, neural, size, topology)
 {
 	var len = dataset.length;
@@ -87,6 +101,9 @@ function run(dataset, neural, size, topology)
 	return buff;
 }
 
+/**
+ * Setting labels to textboxesand adding jhandlers to input formulars
+ */
 function getFormulars()
 {
 	var weights_biases = new Array(1);
@@ -149,6 +166,13 @@ function getFormulars()
 	}
 }
 
+/**
+ * Compute sum of square differencies between two arrays
+ *
+ *@param {Array}
+ *@param {Array}
+ *@return sum of square differencies
+ */
 function ComputeError(arr1, arr2)
 {
 	var len = arr1.length;

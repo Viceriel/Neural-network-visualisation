@@ -4,13 +4,18 @@ var PADDING = 12;
 var line = d3.line()
 				 .x(function(d){return d[0]*50;})
 				 .y(function(d){return HEIGHT-d[1]*100 - PADDING;});
-				 //.interpolate("linear");
 
 var uscale = d3.scaleLinear()
 		     .domain([0, 300])
 		     .range([0, 300]);
 
-
+/**
+ * Drawing graphs based on input buffer
+ *
+ *@param {Elements} canvases arrray of canvases Elements
+ *@param {Array} buff input dataset
+ *@param {Array} dataset input dataset
+ */
 function DrawGraphs(canvases, buff, dataset)
 {
 	canvases[0]
@@ -33,23 +38,33 @@ function DrawGraphs(canvases, buff, dataset)
 			.selectAll("path")
 			.remove();
 
-		canvases[i].append("path")			  
+		canvases[i].append("path")
       		.data([buff[i]])
       		.attr("class", "line")
       		.attr("d", line);
 	}
 }
 
-function make_x_gridlines() {		
+/**
+ * creating x gridlines
+ */
+function make_x_gridlines() {
     return d3.axisBottom(uscale)
         .ticks(5)
 }
 
-function make_y_gridlines() {		
+/**
+ * creating y gridlines
+ */
+function make_y_gridlines() {
     return d3.axisLeft(uscale)
         .ticks(3)
 }
 
+/**
+ * Getting canvases from document, adding labels to canvases
+ *@return array of canvases
+ */
 function GetCanvases()
 {
 	var len = 7;
@@ -73,7 +88,7 @@ function GetCanvases()
 			  .call(make_y_gridlines()
 					.tickSize(-300)
 					.tickFormat(""));
-			
+
 			canvases[i]
 			  .append("g")
 			  .attr("class", "grid")

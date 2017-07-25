@@ -4,6 +4,9 @@ const LEN = SLIDES.length - 1;
 
 this.addEventListener("load", CounterAttack, false);
 
+/**
+ * Adding event handlers to user guide components
+ */
 function initializeHandlers()
 {
     var close = document.getElementById("close");
@@ -17,6 +20,11 @@ function initializeHandlers()
 
 }
 
+/**
+ * Handler for change textbox value, responsible for validating user input and executing main flof
+ *
+ *@param {Object} e event information
+ */
 function ChangeHandler(e)
 {
 	var root = e.target.parentNode;
@@ -37,6 +45,11 @@ function ChangeHandler(e)
 	MainFlow(synapses);
 }
 
+/**
+ * Handler for click on close component, responsible for setting opacity to normal value for page and closing user guide
+ *
+ *@param {Object} e event information
+ */
 function CloseHandler(e)
 {
   var plane = document.getElementById("central");
@@ -44,6 +57,9 @@ function CloseHandler(e)
   e.target.parentNode.parentNode.removeChild(e.target.parentNode);
 }
 
+/**
+ * Handler for click on right arrow, responsible for switch to next page user guide
+ */
 function RightHandler()
 {
 
@@ -65,6 +81,9 @@ function RightHandler()
   }
 }
 
+/**
+ * Handler for click on left arrow, responsible for switch toprevious page user guide
+ */
 function LeftHandler()
 {
   index--;
@@ -85,6 +104,9 @@ function LeftHandler()
   }
 }
 
+/**
+ * Handler for document loading, responsible for location and rewrite advertise position
+ */
 function CounterAttack()
 {
   var body = document.childNodes[1].childNodes[2];
