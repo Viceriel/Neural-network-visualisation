@@ -33,7 +33,7 @@ function ChangeHandler(e)
 
 	for (var i = 0; i < len; i++)
 	{
-		synapses[i] = parseFloat(root.children[i].value);
+		synapses[i] = parseFloat(root.children[i].value.replace(",", "."));
 
 		if (isNaN(synapses[i]))
 		{
