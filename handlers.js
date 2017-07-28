@@ -21,7 +21,7 @@ function initializeHandlers()
 }
 
 /**
- * Handler for change textbox value, responsible for validating user input and executing main flof
+ * Handler for change textbox value, responsible for validating user input and executing main flow
  *
  *@param {Object} e event information
  */
